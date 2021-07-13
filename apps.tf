@@ -2,7 +2,7 @@ module "apps" {
   for_each = var.apps
 
   source  = "cloudchacho/taskhawk-queue/google"
-  version = "~> 3.2.5"
+  version = "~> 3.3.0"
 
   queue                = each.key
   iam_service_accounts = each.value.service_accounts

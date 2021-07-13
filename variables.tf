@@ -53,6 +53,9 @@ variable "apps" {
 
       # Task kwargs
       kwargs = optional(map(string))
+
+      # Task kwargs encoded as a JSON string (use this to get around terraform type problems), if set this is preferred over kwargs
+      kwargs_encoded = optional(string)
     })))
   }))
 }
