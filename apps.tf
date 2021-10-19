@@ -2,7 +2,7 @@ module "apps" {
   for_each = var.apps
 
   source  = "cloudchacho/taskhawk-queue/google"
-  version = "~> 3.3.0"
+  version = "~> 3.4.0"
 
   queue                = each.key
   iam_service_accounts = each.value.service_accounts
@@ -17,6 +17,10 @@ module "apps" {
   queue_alarm_high_priority_high_message_count_threshold = each.value.high_priority_high_message_count_threshold
   queue_alarm_low_priority_high_message_count_threshold  = each.value.low_priority_high_message_count_threshold
   queue_alarm_bulk_high_message_count_threshold          = each.value.bulk_high_message_count_threshold
+  queue_alarm_test_duration_s                            = each.value.high_message_count_test_duration_s
+  queue_alarm_high_priority_test_duration_s              = each.value.high_message_count_high_priority_test_duration_s
+  queue_alarm_low_priority_test_duration_s               = each.value.high_message_count_low_priority_test_duration_s
+  queue_alarm_bulk_test_duration_s                       = each.value.high_message_count_bulk_test_duration_s
 
   enable_firehose_all_messages                   = var.enable_firehose_all_messages || each.value.enable_firehose == true
   dataflow_freshness_alert_threshold             = var.dataflow_freshness_alert_threshold

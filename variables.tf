@@ -16,6 +16,18 @@ variable "apps" {
     # Threshold for alerting on high message count in bulk queue
     bulk_high_message_count_threshold = optional(number)
 
+    # The duration for testing for alerting on high message count in the main queue (defaults to 5 minutes)
+    high_message_count_test_duration_s = optional(number)
+
+    # The duration for testing for alerting on high message count in the high priority queue (defaults to 5 minutes)
+    high_message_count_high_priority_test_duration_s = optional(number)
+
+    # The duration for testing for alerting on high message count in the low priority queue (defaults to 5 minutes)
+    high_message_count_low_priority_test_duration_s = optional(number)
+
+    # The duration for testing for alerting on high message count in the bulk queue (defaults to 5 minutes)
+    high_message_count_bulk_test_duration_s = optional(number)
+
     # The IAM service accounts for this app
     service_accounts = optional(list(string))
 
