@@ -22,6 +22,7 @@ module "apps" {
   queue_alarm_low_priority_test_duration_s               = each.value.high_message_count_low_priority_test_duration_s
   queue_alarm_bulk_test_duration_s                       = each.value.high_message_count_bulk_test_duration_s
 
+  scheduler_region                               = var.scheduler_region
   enable_firehose_all_messages                   = var.enable_firehose_all_messages || each.value.enable_firehose == true
   dataflow_freshness_alert_threshold             = var.dataflow_freshness_alert_threshold
   dataflow_freshness_alert_notification_channels = var.dataflow_freshness_alert_notification_channels
