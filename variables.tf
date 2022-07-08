@@ -72,6 +72,11 @@ variable "apps" {
   }))
 }
 
+variable "scheduler_region" {
+  description = "The region to use for Cloud Scheduler. This may be required if it's not set at the provider level."
+  default     = ""
+}
+
 variable "enable_alerts" {
   description = "Should Stackdriver alerts be generated?"
   type        = bool
